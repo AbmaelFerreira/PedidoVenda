@@ -24,3 +24,10 @@ insert into categoria (descricao, categoria_pai_id) values ('Cadeiras', 3);
 insert into categoria (descricao, categoria_pai_id) values ('Mesas', 3);
 insert into categoria (descricao, categoria_pai_id) values ('Racks', 3);
 insert into categoria (descricao, categoria_pai_id) values ('Sofás', 3);
+
+CREATE TABLE GRUPO 
+(
+  ID NUMBER NOT NULL PRIMARY KEY
+, DESCRICAO VARCHAR(40) NOT NULL 
+, GRUPO_PAI_ID NUMBER
+)

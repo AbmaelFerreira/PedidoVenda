@@ -7,11 +7,7 @@
     <ui:define name="titulo">Novo Usuario</ui:define>
     <ui:define name="corpo">
     
-    <!--	
-    	<f:metadata>
-    	 	<f:event listener="#{cadastroUsuarioBean.inicializar}"  type="preRenderView"/>
-    	</f:metadata>
-      -->	
+    
     <h:form>
 	 	<h1>Novo Usuario</h1>
 	 	
@@ -22,55 +18,54 @@
 	    	<p:toolbar style="margin-top: 20px">
 	    	 	 ~
 	    	 	 	<p:toolbarGroup>
-	    	    		 <p:button value="Novo"   outcome="" />
+	    	    		 <p:button value="Novo"  />
 	    				 <p:commandButton value="Salvar"   id="botaoSalvar" />
 	    	  		</p:toolbarGroup>
 	    	  	
 	    			<p:toolbarGroup align="right">
-	    		  		<p:button value="Pesquisa"  outcome="" />
+	    		  		<p:button value="Pesquisa"  />
 	    			</p:toolbarGroup>
 	    	</p:toolbar>
 	    	
     	<!-- Grid com as opções para adicionar o Usuario-->
  		<p:panelGrid columns="2"   id="painel" style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
 
-    	<p:outputLabel value="SKU" for="sku"/>
-    	<p:inputText id="sku"   size="20"   maxlength="20"   value=""/>
+    	<p:outputLabel value="CPF" for="cpf"/>
+    	<p:inputText id="cpf"   size="20"   maxlength="20"   value=""/>
 
      	<p:outputLabel value="Nome" for="nome"/>
 		<p:inputText id="nome"  size="60"   maxlength="80"    value=""/>
+		
+		
+		<p:outputLabel value="Email" for="email"/>
+		  <p:inputText  id="email" 
+			    		size="40" 
+			    		maxlength="40" 
+			    		value="">
+		   </p:inputText>
+		 		
+ <p:outputLabel value="Senha" for="senha"/>
+ <p:password id="senha">
+ </p:password>
 
-	 	<p:outputLabel value="Categoria" for="categoria"/>
-	 	<p:selectOneMenu id="categoria">
-	    	<f:selectItem itemLabel="Selecione a categoria"/>
+	 	<p:outputLabel value="Grupo" for="grupo"/>
+	 	<p:selectOneMenu id="grupo">
+	    	<f:selectItem itemLabel="Selecione o Grupo"/>
 	   		<f:selectItems 	value="" 
-          					var="categoria"
+          					var="grupo"
           					itemValue=""
          					itemLabel=""/>
 		</p:selectOneMenu>
 	    	
 
-   		<p:outputLabel value="Subcategoria" for="subCategoria"/>
-   		<p:selectOneMenu id="subCategoria" 
+   		<p:outputLabel value="SubGrupo" for="subGrupo"/>
+   		<p:selectOneMenu id="subGrupo" 
 	               value="">
-	 		<f:selectItem itemLabel="Selecione a subcategoria"/>
+	 		<f:selectItem itemLabel="Selecione o SubGrupo"/>
 		</p:selectOneMenu>
 
 
-  <p:outputLabel value="Valor unitário" for="valorUnitario"/>
-  <p:inputText  id="valorUnitario" 
-	    		size="10" 
-	    		maxlength="10" 
-	    		styleClass="moeda" 
-	    		value="">
-	    	   <f:convertNumber maxFractionDigits="2" minFractionDigits="2"/>
-   </p:inputText>
- 		
- <p:outputLabel value="Estoque" for="estoque"/>
- <p:inputText   id="estoque" 
-	    	    size="10" 
-	    	    maxlength="5" 
-	    	    value=""/>
+  
 </p:panelGrid>
     	</h:form>
     </ui:define>
